@@ -17,3 +17,4 @@ ddev drush cim -y
 echo "Database updates..."
 ddev drush updb -y
 ddev composer run va:theme:compile
+ddev drush en devel
