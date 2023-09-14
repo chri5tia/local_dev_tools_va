@@ -6,15 +6,22 @@ UPSTREAM=origin
 # Name of main branch
 MAIN_BRANCH=main
 
-echo "Fetching upstream stuff..."
+# Decoration
+D=☆⋆｡𖦹°‧★☆⋆｡𖦹°‧★☆⋆｡𖦹°‧★
+
+echo "$D Fetching upstream stuff. $D"
 git fetch --all
-echo "Rebasing with the main branch..."
+echo "$D Rebasing with the main branch. $D"
 git rebase $UPSTREAM/$MAIN_BRANCH
-echo "Running composer install..."
+echo "$D Running composer install. $D"
 ddev composer install
-echo "Importing config"
+echo "$D Uninstalling devel $D"
+ddev drush pm-uninstall devel
+echo "$D Importing config. $D"
 ddev drush cim -y
-echo "Database updates..."
+echo "$D Database updates. $D"
 ddev drush updb -y
+echo "$D Compiling the theme $D"
 ddev composer run va:theme:compile
+echo "$D Reinstalling devel $D"
 ddev drush en devel
