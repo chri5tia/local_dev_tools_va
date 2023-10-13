@@ -2,6 +2,12 @@
 
 # Handy git checkout shortcut
 
+# Set up instructions
+# Add an alias to your shell profile
+# Example: ~/.bash_profile, ~/.bashrc or ~/.zshrc
+#
+# alias gitco='/path/to/gitco.sh'
+
 if [ -n "$1" ]; then
     ticket="$1";
     target=$(git branch | grep "$ticket")

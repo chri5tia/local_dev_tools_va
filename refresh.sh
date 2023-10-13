@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# Exit script if any command fails
-#set -e
+# Set up instructions
+# Add an alias to your shell profile
+# Example: ~/.bash_profile, ~/.bashrc or ~/.zshrc
+# 
+# alias vafresh='/path/to/your/script.sh'
 
-# Check these variables
+# Uncomment to exit script if any command fails
+# set -e
+
+# Set these local variables
 # Name of remotes
 UPSTREAM=origin
 ORIGIN=origin
